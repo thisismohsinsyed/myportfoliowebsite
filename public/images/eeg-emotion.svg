@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg4)" rx="12"/>
+  <!-- Brain outline (simplified) -->
+  <ellipse cx="400" cy="190" rx="130" ry="110" fill="none" stroke="#334155" stroke-width="1.5"/>
+  <path d="M310 150 Q340 100 400 90 Q460 100 490 150" fill="none" stroke="#334155" stroke-width="1"/>
+  <line x1="400" y1="80" x2="400" y2="300" stroke="#334155" stroke-width="0.5" opacity="0.5"/>
+  <!-- EEG electrode points -->
+  <circle cx="400" cy="90" r="8" fill="#a78bfa" opacity="0.8"/>
+  <circle cx="330" cy="120" r="8" fill="#22d3ee" opacity="0.8"/>
+  <circle cx="470" cy="120" r="8" fill="#22d3ee" opacity="0.8"/>
+  <circle cx="290" cy="180" r="8" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="510" cy="180" r="8" fill="#f59e0b" opacity="0.8"/>
+  <circle cx="310" cy="240" r="8" fill="#34d399" opacity="0.8"/>
+  <circle cx="490" cy="240" r="8" fill="#34d399" opacity="0.8"/>
+  <circle cx="350" cy="280" r="8" fill="#ef4444" opacity="0.7"/>
+  <circle cx="450" cy="280" r="8" fill="#ef4444" opacity="0.7"/>
+  <!-- Labels -->
+  <text x="400" y="78" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="8">Fz</text>
+  <text x="330" y="108" text-anchor="middle" fill="#22d3ee" font-family="Arial" font-size="8">F3</text>
+  <text x="470" y="108" text-anchor="middle" fill="#22d3ee" font-family="Arial" font-size="8">F4</text>
+  <text x="275" y="184" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="8">C3</text>
+  <text x="525" y="184" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="8">C4</text>
+  <!-- EEG wave signals -->
+  <g transform="translate(50, 340)">
+    <text x="0" y="-5" fill="#94a3b8" font-family="Arial" font-size="10">Alpha (8-13 Hz)</text>
+    <path d="M0 20 Q10 5 20 20 Q30 35 40 20 Q50 5 60 20 Q70 35 80 20 Q90 5 100 20 Q110 35 120 20 Q130 5 140 20 Q150 35 160 20 Q170 5 180 20" stroke="#a78bfa" stroke-width="1.5" fill="none"/>
+  </g>
+  <g transform="translate(280, 340)">
+    <text x="0" y="-5" fill="#94a3b8" font-family="Arial" font-size="10">Beta (13-30 Hz)</text>
+    <path d="M0 20 Q5 10 10 20 Q15 30 20 20 Q25 10 30 20 Q35 30 40 20 Q45 10 50 20 Q55 30 60 20 Q65 10 70 20 Q75 30 80 20 Q85 10 90 20 Q95 30 100 20 Q105 10 110 20 Q115 30 120 20 Q125 10 130 20 Q135 30 140 20 Q145 10 150 20 Q155 30 160 20 Q165 10 170 20 Q175 30 180 20" stroke="#22d3ee" stroke-width="1.5" fill="none"/>
+  </g>
+  <g transform="translate(530, 340)">
+    <text x="0" y="-5" fill="#94a3b8" font-family="Arial" font-size="10">Gamma (30-100 Hz)</text>
+    <path d="M0 20 Q3 12 6 20 Q9 28 12 20 Q15 12 18 20 Q21 28 24 20 Q27 12 30 20 Q33 28 36 20 Q39 12 42 20 Q45 28 48 20 Q51 12 54 20 Q57 28 60 20 Q63 12 66 20 Q69 28 72 20 Q75 12 78 20 Q81 28 84 20 Q87 12 90 20 Q93 28 96 20 Q99 12 102 20 Q105 28 108 20 Q111 12 114 20 Q117 28 120 20 Q123 12 126 20 Q129 28 132 20 Q135 12 138 20 Q141 28 144 20 Q147 12 150 20 Q153 28 156 20 Q159 12 162 20 Q165 28 168 20 Q171 12 174 20 Q177 28 180 20" stroke="#34d399" stroke-width="1.5" fill="none"/>
+  </g>
+  <!-- Emotion classification results -->
+  <rect x="100" y="400" width="600" height="50" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <text x="130" y="422" fill="#94a3b8" font-family="Arial" font-size="11">Prediction:</text>
+  <rect x="210" y="408" width="80" height="24" rx="12" fill="#22c55e" opacity="0.2"/>
+  <text x="250" y="424" text-anchor="middle" fill="#22c55e" font-family="Arial" font-size="12" font-weight="bold">Happy 73%</text>
+  <rect x="310" y="408" width="80" height="24" rx="12" fill="#f59e0b" opacity="0.2"/>
+  <text x="350" y="424" text-anchor="middle" fill="#f59e0b" font-family="Arial" font-size="12">Calm 18%</text>
+  <rect x="410" y="408" width="80" height="24" rx="12" fill="#a78bfa" opacity="0.2"/>
+  <text x="450" y="424" text-anchor="middle" fill="#a78bfa" font-family="Arial" font-size="12">Sad 6%</text>
+  <rect x="510" y="408" width="80" height="24" rx="12" fill="#ef4444" opacity="0.2"/>
+  <text x="550" y="424" text-anchor="middle" fill="#ef4444" font-family="Arial" font-size="12">Angry 3%</text>
+  <!-- Accuracy badge -->
+  <rect x="610" y="408" width="74" height="24" rx="12" fill="#22d3ee" opacity="0.15"/>
+  <text x="647" y="424" text-anchor="middle" fill="#22d3ee" font-family="Arial" font-size="11">Acc: 89%</text>
+  <!-- Title -->
+  <text x="400" y="480" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="14">CNN-LSTM Emotion Classification from EEG Signals</text>
+</svg>

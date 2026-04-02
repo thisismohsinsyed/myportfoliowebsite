@@ -35,24 +35,29 @@ const Navbar = () => {
         }
       });
     });
-    window.addEventListener("resize", () => {
+    const onResize = () => {
       ScrollSmoother.refresh(true);
-    });
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
   return (
     <>
       <div className="header">
         <a href="/#" className="navbar-title" data-cursor="disable">
-          AM
+          MS
         </a>
         <a
-          href="https://www.linkedin.com/in/akashrmalhotra/"
+          href="https://www.linkedin.com/in/syed-mohsin-ali-shah/"
           className="navbar-connect"
           data-cursor="disable"
           target="_blank"
           rel="noreferrer"
         >
-          linkedin.com/in/akashrmalhotra
+          linkedin.com/in/syed-mohsin-ali-shah
         </a>
         <ul>
           <li>

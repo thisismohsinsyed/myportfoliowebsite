@@ -1,9 +1,9 @@
 import {
-  FaGithub,
-  FaInstagram,
   FaLinkedinIn,
   FaYoutube,
+  FaInstagram,
 } from "react-icons/fa6";
+import { FaGraduationCap } from "react-icons/fa6";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
@@ -12,6 +12,7 @@ import HoverLinks from "./HoverLinks";
 const SocialIcons = () => {
   useEffect(() => {
     const social = document.getElementById("social") as HTMLElement;
+    const cleanups: (() => void)[] = [];
 
     social.querySelectorAll("span").forEach((item) => {
       const elem = item as HTMLElement;
@@ -22,6 +23,7 @@ const SocialIcons = () => {
       let mouseY = rect.height / 2;
       let currentX = 0;
       let currentY = 0;
+      let animFrameId: number;
 
       const updatePosition = () => {
         currentX += (mouseX - currentX) * 0.1;
@@ -30,7 +32,7 @@ const SocialIcons = () => {
         link.style.setProperty("--siLeft", `${currentX}px`);
         link.style.setProperty("--siTop", `${currentY}px`);
 
-        requestAnimationFrame(updatePosition);
+        animFrameId = requestAnimationFrame(updatePosition);
       };
 
       const onMouseMove = (e: MouseEvent) => {
@@ -47,13 +49,17 @@ const SocialIcons = () => {
       };
 
       document.addEventListener("mousemove", onMouseMove);
-
       updatePosition();
 
-      return () => {
-        elem.removeEventListener("mousemove", onMouseMove);
-      };
+      cleanups.push(() => {
+        document.removeEventListener("mousemove", onMouseMove);
+        cancelAnimationFrame(animFrameId);
+      });
     });
+
+    return () => {
+      cleanups.forEach((fn) => fn());
+    };
   }, []);
 
   return (
@@ -61,16 +67,7 @@ const SocialIcons = () => {
       <div className="social-icons" data-cursor="icons" id="social">
         <span>
           <a
-            href="https://github.com/akashrmalhotra"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a
-            href="https://www.linkedin.com/in/akashrmalhotra/"
+            href="https://www.linkedin.com/in/syed-mohsin-ali-shah/"
             target="_blank"
             rel="noreferrer"
           >
@@ -79,7 +76,16 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.youtube.com/@Leftbraincoder"
+            href="https://scholar.google.com/citations?user=gjNkrLMAAAAJ&hl"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <FaGraduationCap />
+          </a>
+        </span>
+        <span>
+          <a
+            href="https://www.youtube.com/@MachineLearningForEveryone"
             target="_blank"
             rel="noreferrer"
           >
@@ -88,7 +94,7 @@ const SocialIcons = () => {
         </span>
         <span>
           <a
-            href="https://www.instagram.com/leftbraincoder/"
+            href="https://www.instagram.com/dr.mohsin.syed"
             target="_blank"
             rel="noreferrer"
           >
@@ -98,9 +104,8 @@ const SocialIcons = () => {
       </div>
       <a
         className="resume-button"
-        href="/Akash_Malhotra.pdf"
-        target="_blank"
-        rel="noreferrer"
+        href="/Syed_Mohsin_Ali_Shah.pdf"
+        download
       >
         <HoverLinks text="RESUME" />
         <span>

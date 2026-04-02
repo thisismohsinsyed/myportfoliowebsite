@@ -13,14 +13,14 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/python.webp",
+  "/images/pytorch.webp",
+  "/images/tensorflow.webp",
+  "/images/docker.webp",
+  "/images/fastapi.webp",
+  "/images/aws.webp",
+  "/images/git.webp",
+  "/images/kubernetes.webp",
 ];
 const textures = imageUrls.map((url) => textureLoader.load(url));
 
@@ -135,20 +135,26 @@ const TechStack = () => {
         .getBoundingClientRect().top;
       setIsActive(scrollY > threshold);
     };
+
+    const clickCleanups: (() => void)[] = [];
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
-      element.addEventListener("click", () => {
+      const onClick = () => {
         const interval = setInterval(() => {
           handleScroll();
         }, 10);
         setTimeout(() => {
           clearInterval(interval);
         }, 1000);
-      });
+      };
+      element.addEventListener("click", onClick);
+      clickCleanups.push(() => element.removeEventListener("click", onClick));
     });
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      clickCleanups.forEach((fn) => fn());
     };
   }, []);
   const materials = useMemo(() => {

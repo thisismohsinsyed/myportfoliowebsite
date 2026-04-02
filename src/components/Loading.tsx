@@ -10,28 +10,31 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
-      setLoaded(true);
-      setTimeout(() => {
-        setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+  useEffect(() => {
+    if (percent >= 100) {
+      const timer1 = setTimeout(() => {
+        setLoaded(true);
+        const timer2 = setTimeout(() => {
+          setIsLoaded(true);
+        }, 1000);
+        return () => clearTimeout(timer2);
+      }, 600);
+      return () => clearTimeout(timer1);
+    }
+  }, [percent]);
 
   useEffect(() => {
+    if (!isLoaded) return;
     import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
-      }
+      setClicked(true);
+      setTimeout(() => {
+        if (module.initialFX) {
+          module.initialFX();
+        }
+        setIsLoading(false);
+      }, 900);
     });
-  }, [isLoaded]);
+  }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
@@ -46,7 +49,7 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          AM
+          MS
         </a>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">
@@ -62,8 +65,8 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
+            <span> Machine Learning Engineer</span> <span>AI Researcher</span>
+            <span> Machine Learning Engineer</span> <span>AI Researcher</span>
           </Marquee>
         </div>
         <div
@@ -97,20 +100,20 @@ export const setProgress = (setLoading: (value: number) => void) => {
 
   let interval = setInterval(() => {
     if (percent <= 50) {
-      let rand = Math.round(Math.random() * 5);
+      let rand = Math.round(Math.random() * 5) + 1;
       percent = percent + rand;
-      setLoading(percent);
+      setLoading(Math.min(percent, 50));
     } else {
       clearInterval(interval);
       interval = setInterval(() => {
-        percent = percent + Math.round(Math.random());
-        setLoading(percent);
-        if (percent > 91) {
+        percent = percent + Math.ceil(Math.random() * 2);
+        setLoading(Math.min(percent, 92));
+        if (percent >= 92) {
           clearInterval(interval);
         }
-      }, 2000);
+      }, 300);
     }
-  }, 100);
+  }, 80);
 
   function clear() {
     clearInterval(interval);

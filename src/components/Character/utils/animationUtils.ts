@@ -15,11 +15,10 @@ const setAnimations = (gltf: GLTF) => {
     introAction.play();
     const clipNames = ["key1", "key2", "key5", "key6"];
     clipNames.forEach((name) => {
-      const clip = THREE.AnimationClip.findByName(gltf.animations, name);
-      if (clip) {
-        const action = mixer?.clipAction(clip);
-        action!.play();
-        action!.timeScale = 1.2;
+      const action = createBoneAction(gltf, mixer, name, typingBoneNames);
+      if (action) {
+        action.play();
+        action.timeScale = 1.2;
       } else {
         console.error(`Animation "${name}" not found`);
       }
@@ -42,6 +41,7 @@ const setAnimations = (gltf: GLTF) => {
     setTimeout(() => {
       const blink = gltf.animations.find((clip) => clip.name === "Blink");
       mixer.clipAction(blink!).play().fadeIn(0.5);
+      introAction.fadeOut(0.5);
     }, 2500);
   }
   function hover(gltf: GLTF, hoverDiv: HTMLDivElement) {

@@ -11,36 +11,29 @@ const Contact = () => {
             <h4>Connect</h4>
             <p>
               <a
-                href="https://www.linkedin.com/in/akashrmalhotra/"
+                href="https://www.linkedin.com/in/syed-mohsin-ali-shah/"
                 target="_blank"
                 rel="noreferrer"
                 data-cursor="disable"
               >
-                LinkedIn — akashrmalhotra
+                LinkedIn — syed-mohsin-ali-shah
               </a>
             </p>
             <h4>Education</h4>
             <p>
-              PGPWE (MBA), Indian Institute of Management, Lucknow — 2021–2023
+              Ph.D. Engineering, University of Deusto, Bilbao, Spain — 2023–2026
             </p>
             <p>
-              B.Tech Computer Science, Manav Rachna Educational Institutions —
-              2009–2013
+              M.S. Computer Engineering, Bahria University, Islamabad — 2019–2021
+            </p>
+            <p>
+              B.S. Computer Engineering, Bahria University, Islamabad — 2013–2017
             </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
             <a
-              href="https://github.com/akashrmalhotra"
-              target="_blank"
-              rel="noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              GitHub <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/akashrmalhotra/"
+              href="https://www.linkedin.com/in/syed-mohsin-ali-shah/"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -49,7 +42,16 @@ const Contact = () => {
               LinkedIn <MdArrowOutward />
             </a>
             <a
-              href="https://www.youtube.com/@Leftbraincoder"
+              href="https://scholar.google.com/citations?user=gjNkrLMAAAAJ&hl"
+              target="_blank"
+              rel="noreferrer"
+              data-cursor="disable"
+              className="contact-social"
+            >
+              Google Scholar <MdArrowOutward />
+            </a>
+            <a
+              href="https://www.youtube.com/@MachineLearningForEveryone"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -58,7 +60,7 @@ const Contact = () => {
               YouTube <MdArrowOutward />
             </a>
             <a
-              href="https://www.instagram.com/leftbraincoder/"
+              href="https://www.instagram.com/dr.mohsin.syed"
               target="_blank"
               rel="noreferrer"
               data-cursor="disable"
@@ -69,7 +71,7 @@ const Contact = () => {
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>Akash Malhotra</span>
+              Dr. Syed Mohsin <br /> <span>Ali Shah</span>
             </h2>
             <h5>
               <MdCopyright /> 2026

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#1e293b"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)" rx="12"/>
+  <!-- Air quality wave lines -->
+  <path d="M50 320 Q150 280 250 320 Q350 360 450 320 Q550 280 650 320 Q700 340 750 320" stroke="#22d3ee" stroke-width="2" fill="none" opacity="0.3"/>
+  <path d="M50 340 Q150 300 250 340 Q350 380 450 340 Q550 300 650 340 Q700 360 750 340" stroke="#22d3ee" stroke-width="2" fill="none" opacity="0.2"/>
+  <path d="M50 360 Q150 320 250 360 Q350 400 450 360 Q550 320 650 360 Q700 380 750 360" stroke="#22d3ee" stroke-width="2" fill="none" opacity="0.1"/>
+  <!-- Dashboard mockup -->
+  <rect x="120" y="60" width="560" height="220" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+  <rect x="120" y="60" width="560" height="32" rx="8" fill="#334155"/>
+  <circle cx="142" cy="76" r="5" fill="#ef4444"/>
+  <circle cx="158" cy="76" r="5" fill="#eab308"/>
+  <circle cx="174" cy="76" r="5" fill="#22c55e"/>
+  <text x="400" y="80" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="12">Amiaire Air Quality Dashboard</text>
+  <!-- Chart bars -->
+  <rect x="160" y="210" width="30" height="50" rx="3" fill="#22d3ee" opacity="0.8"/>
+  <rect x="210" y="180" width="30" height="80" rx="3" fill="#22d3ee" opacity="0.7"/>
+  <rect x="260" y="160" width="30" height="100" rx="3" fill="#22d3ee" opacity="0.9"/>
+  <rect x="310" y="190" width="30" height="70" rx="3" fill="#06b6d4" opacity="0.6"/>
+  <rect x="360" y="140" width="30" height="120" rx="3" fill="#22d3ee" opacity="0.8"/>
+  <rect x="410" y="170" width="30" height="90" rx="3" fill="#06b6d4" opacity="0.7"/>
+  <rect x="460" y="150" width="30" height="110" rx="3" fill="#22d3ee" opacity="0.85"/>
+  <rect x="510" y="195" width="30" height="65" rx="3" fill="#06b6d4" opacity="0.65"/>
+  <rect x="560" y="130" width="30" height="130" rx="3" fill="#22d3ee" opacity="0.9"/>
+  <rect x="610" y="175" width="30" height="85" rx="3" fill="#06b6d4" opacity="0.75"/>
+  <!-- Labels -->
+  <text x="160" y="120" fill="#94a3b8" font-family="Arial" font-size="11">AQI</text>
+  <text x="160" y="135" fill="#22d3ee" font-family="Arial" font-size="18" font-weight="bold">142</text>
+  <text x="280" y="120" fill="#94a3b8" font-family="Arial" font-size="11">PM2.5</text>
+  <text x="280" y="135" fill="#22d3ee" font-family="Arial" font-size="18" font-weight="bold">38.2</text>
+  <text x="420" y="120" fill="#94a3b8" font-family="Arial" font-size="11">CO2</text>
+  <text x="420" y="135" fill="#22d3ee" font-family="Arial" font-size="18" font-weight="bold">412</text>
+  <!-- Title -->
+  <text x="400" y="420" text-anchor="middle" fill="#e2e8f0" font-family="Arial" font-size="28" font-weight="bold">Amiaire Platform</text>
+  <text x="400" y="450" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="14">AI-Powered Air Quality Monitoring</text>
+  <!-- Decorative dots -->
+  <circle cx="380" y="470" r="3" fill="#22d3ee" opacity="0.5"/>
+  <circle cx="400" cy="470" r="3" fill="#22d3ee" opacity="0.8"/>
+  <circle cx="420" cy="470" r="3" fill="#22d3ee" opacity="0.5"/>
+</svg>

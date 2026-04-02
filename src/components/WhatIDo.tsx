@@ -8,19 +8,20 @@ const WhatIDo = () => {
     containerRef.current[index] = el;
   };
   useEffect(() => {
+    const handlers: Map<HTMLDivElement, () => void> = new Map();
     if (ScrollTrigger.isTouch) {
       containerRef.current.forEach((container) => {
         if (container) {
           container.classList.remove("what-noTouch");
-          container.addEventListener("click", () => handleClick(container));
+          const handler = () => handleClick(container);
+          handlers.set(container, handler);
+          container.addEventListener("click", handler);
         }
       });
     }
     return () => {
-      containerRef.current.forEach((container) => {
-        if (container) {
-          container.removeEventListener("click", () => handleClick(container));
-        }
+      handlers.forEach((handler, container) => {
+        container.removeEventListener("click", handler);
       });
     };
   }, []);
@@ -87,20 +88,21 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>AI & AUTOMATION</h3>
-              <h4>Workflow Intelligence for Organizations</h4>
+              <h3>ML & AI ENGINEERING</h3>
+              <h4>Production-Grade AI Systems</h4>
               <p>
-                AI specialist helping organizations automate workflows—internal ops
-                and customer-facing—so teams ship faster with less manual work.
+                Building end-to-end ML pipelines—from data ingestion and model
+                training to deployment and monitoring—across CPU, GPU, and
+                distributed HPC environments.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">LLMs &amp; agents</div>
-                <div className="what-tags">Workflow design</div>
-                <div className="what-tags">RAG &amp; retrieval</div>
-                <div className="what-tags">Evals &amp; guardrails</div>
-                <div className="what-tags">Integrations</div>
-                <div className="what-tags">Product strategy</div>
+                <div className="what-tags">PyTorch</div>
+                <div className="what-tags">TensorFlow</div>
+                <div className="what-tags">FastAPI</div>
+                <div className="what-tags">Docker</div>
+                <div className="what-tags">LLMs &amp; RAG</div>
+                <div className="what-tags">MLOps</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -124,21 +126,22 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BUILD &amp; SCALE</h3>
-              <h4>Shipping AI in Production</h4>
+              <h3>RESEARCH &amp; INNOVATION</h3>
+              <h4>Pushing Boundaries in AI & Computer Vision</h4>
               <p>
-                I build the systems behind it: APIs, data, voice/real-time, and
-                full-stack products—production-ready, not slide decks.
+                Ph.D. researcher with peer-reviewed publications. Specializing in
+                environmental AI, image processing, and deep learning for
+                real-world impact.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
                 <div className="what-tags">Python</div>
-                <div className="what-tags">REST &amp; real-time APIs</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">React</div>
-                <div className="what-tags">Cloud &amp; infra</div>
+                <div className="what-tags">Computer Vision</div>
+                <div className="what-tags">NLP</div>
+                <div className="what-tags">Kubernetes</div>
+                <div className="what-tags">AWS &amp; GCP</div>
+                <div className="what-tags">scikit-learn</div>
+                <div className="what-tags">OpenCV</div>
               </div>
               <div className="what-arrow"></div>
             </div>

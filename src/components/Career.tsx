@@ -15,58 +15,86 @@ const Career = () => {
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Co-Founder</h4>
-                <h5>CallHQ.ai</h5>
+                <h4>ML Engineer</h4>
+                <h5>Multiverse Computing · Zaragoza, Spain</h5>
               </div>
               <h3>NOW</h3>
             </div>
             <p>
-              Building CallHQ.ai, a voice AI platform for
-              automating customer calls, support, and conversions.
+              Building end-to-end data and model pipelines. Prototyping novel
+              LLM architectures and training methods for NLP and generative AI.
+              Implementing model compression and optimization for scalable
+              deployment.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Adobe</h4>
-                <h5>6+ years · Noida</h5>
+                <h4>ML Engineer</h4>
+                <h5>Quebec Inc · Remote, Canada</h5>
               </div>
-              <h3>2017–24</h3>
+              <h3>2025</h3>
             </div>
             <p>
-              Senior Lead Software Engineer (Feb 2024 – May 2024). Lead Software
-              Engineer (Feb 2021 – Feb 2024). Software Engineer II (Dec 2017 –
-              Feb 2021): internationalization, globalization, and localization for
-              Adobe Technical Communication Suite; functional and linguistic testing
-              strategy; in-house tooling; collaboration with product and engineering
-              for high-quality localized releases.
+              Designed and deployed production-grade ML, Deep Learning, and
+              LLM-based systems for arbitrage, user acquisition, and marketing
+              automation pipelines.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Consultant</h4>
-                <h5>Genpact Headstrong </h5>
+                <h4>ML Engineer</h4>
+                <h5>Aurakore IT Solutions · Remote, USA</h5>
               </div>
-              <h3>2016–17</h3>
+              <h3>2025</h3>
             </div>
             <p>
-              Sep 2016 – Nov 2017. Developed and maintained WCF services consumed
-              by the UI; deployment support across environments; NUnit tests and
-              coverage; bug fixes from QA and users; database work.
+              Designed multi-agent AI systems based on MCP. Deployed FastAPI
+              microservices. Fine-tuned domain-specific LLMs with LoRA and
+              quantization. Evaluated LLM performance using NLP benchmarks.
             </p>
           </div>
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Sf Engineer</h4>
-                <h5>Infogain</h5>
+                <h4>Research Asst.</h4>
+                <h5>DeustoTech, Univ. of Deusto · Bilbao, Spain</h5>
               </div>
-              <h3>2013-16</h3>
+              <h3>2023–25</h3>
             </div>
             <p>
-              Software engineering across enterprise projects, contributing to
-              design, development, and delivery of business applications.
+              Deployed ML pipelines for real-time particulate matter estimation.
+              Built RESTful APIs and containerized AI models on HPC
+              infrastructure using Docker and GitHub Actions.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Visiting Researcher</h4>
+                <h5>NILU · Oslo, Norway</h5>
+              </div>
+              <h3>2024–25</h3>
+            </div>
+            <p>
+              Conducted advanced research on image processing pipelines for
+              environmental data analysis. Developed ML models to automate PM
+              detection and quantification.
+            </p>
+          </div>
+          <div className="career-info-box">
+            <div className="career-info-in">
+              <div className="career-role">
+                <h4>Jr. Lecturer</h4>
+                <h5>SZABIST · Islamabad, Pakistan</h5>
+              </div>
+              <h3>2019–23</h3>
+            </div>
+            <p>
+              Delivered courses in Software Engineering, Deep Learning, Computer
+              Vision, and AI. Mentored students on industry-focused projects and
+              supervised speech/emotion recognition research.
             </p>
           </div>
         </div>
