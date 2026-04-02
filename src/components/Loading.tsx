@@ -25,15 +25,29 @@ const Loading = ({ percent }: { percent: number }) => {
 
   useEffect(() => {
     if (!isLoaded) return;
-    import("./utils/initialFX").then((module) => {
-      setClicked(true);
-      setTimeout(() => {
-        if (module.initialFX) {
-          module.initialFX();
-        }
+    import("./utils/initialFX")
+      .then((module) => {
+        setClicked(true);
+        setTimeout(() => {
+          try {
+            if (module.initialFX) {
+              module.initialFX();
+            }
+          } catch (e) {
+            console.error("initialFX failed:", e);
+            document.body.style.overflowY = "auto";
+            document.getElementsByTagName("main")[0]?.classList.add("main-active");
+          }
+          setIsLoading(false);
+        }, 900);
+      })
+      .catch((err) => {
+        console.error("Failed to load initialFX:", err);
+        setClicked(true);
+        document.body.style.overflowY = "auto";
+        document.getElementsByTagName("main")[0]?.classList.add("main-active");
         setIsLoading(false);
-      }, 900);
-    });
+      });
   }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
